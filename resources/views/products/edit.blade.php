@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Product</h2>
+                <h2>Edit Produk</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
@@ -50,7 +50,7 @@
     @endif
 
 
-    <form action="{{ route('products.update',$products->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('products.update',$product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

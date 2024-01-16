@@ -1,8 +1,6 @@
 @extends('layout.navbar')
 @section('navbar')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Outfit:wght@300;400;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700;900&display=swap');
-
 *{
     margin: 0;
     padding: 0;
@@ -116,9 +114,6 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>About Us Section</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-      {{--  <link rel="stylesheet" href="{{asset('build/assets/css/tentang.css')}}">  --}}
-
-
     </head>
     <body>
       <div class="section">
@@ -133,21 +128,13 @@
                 sapiente soluta iste saepe possimus omnis, maiores deserunt nam corporis minus distinctio a hic laudantium!
                 Totam, ut iusto! Iusto tempora praesentium in, doloribus consectetur porro! Non corrupti eius illum ad odit dolores, facilis voluptatibus ducimus quidem praesentium.
               </p>
+              <br>
               <div class="button">
                 <a href="#">Read More</a>
               </div>
             </div>
-            <div class="social">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="image-section">
-            <img src="{{asset('build/assets/img/logo_toko.png')}}" alt="">
           </div>
         </div>
-
       </div>
     </body>
     </html>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,15 +13,15 @@ use Illuminate\View\View;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Method ini menampilkan daftar produk dengan menggunakan paginasi,
+     * yaitu menampilkan 5 produk per halaman.
      */
     public function index(): View
     {
         $products = Product::latest()->paginate(5);
         return view('products.index', compact('products'))
         ->with('i', (request()->input('page', 1)-1)* 5);
-        // $products = DB::table('products')->get();
-        // return view('products.index',['products.index'=> $products]);
+
     }
 
     /**
@@ -97,8 +97,7 @@ class ProductController extends Controller
         }
 
         $product->update($input);
-        return redirect()->route('products.index')->name('dasboard')
-        ->with('success','Product Update Successfully');
+        return Redirect()->route('products.index')->with('success','Product Update Successfully');
     }
 
     /**
@@ -106,9 +105,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): RedirectResponse
     {
-        
+
         $product->delete();
         return redirect()->route('products.index')
         ->with('Success','Product Deleted Successfully');
     }
 }
+

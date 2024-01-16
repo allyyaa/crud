@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SocialiteController;
@@ -19,7 +20,10 @@ Route::resource('products', ProductController::class);
 Route::get('/google/redirect', [SocialiteController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/callback', [SocialiteController::class, 'callback']);
 Route::get('/tambah', [ProductController::class, 'create']);
-// Route::get('/edit', [ProductController::class, 'update']);
+Route::get('/home', [ProductController::class, 'index'])->name('home');
+Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+// Route::get('home',[])
 Route::get('/logout', [SocialiteController::class, 'logout'])->name('logout');
 
 Route::get('/home', function () {

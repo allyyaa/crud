@@ -52,13 +52,13 @@ body{
 }
 
 .nav-link{
-  color: #666777;
+  color: whitesmoke;
   font-weight: 500;
   position: relative;
 }
 
 .nav-link:hover, .nav-link.active{
-  color: #000;
+  color: whitesmoke;
 }
 
 @media(min-width: 991px){
@@ -85,7 +85,7 @@ body{
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Apotek</a>
+          <a class="navbar-brand" href="#">Apotek Saranjana</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -95,7 +95,7 @@ body{
                 <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/products">Prodak</a>
+                <a class="nav-link" href="/products">Produk</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/about">Informasi</a>

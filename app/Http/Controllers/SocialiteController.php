@@ -23,7 +23,7 @@ class SocialiteController extends Controller
 
             if($user){
                 Auth::login($user);
-                return redirect()->route('products.index');
+                return redirect()->intended('/home');
             }else{
                 $uuid = Str::uuid()->toString();
 
@@ -33,7 +33,7 @@ class SocialiteController extends Controller
                 $user->password = Hash::make($uuid.now());
                 $user->save();
                 Auth::login($user);
-                return redirect()->route('products.index');
+                return redirect()->intended('/home');
             }
         }catch (\Throwable $th){
             dd('Something went wrong!'. $th->getMessage());

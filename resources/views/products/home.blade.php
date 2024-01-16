@@ -26,8 +26,8 @@
 </style>
   <section class="hero-section" >
     <div class="container d-flex align-items-center justify-content-center fs-1 text-dark flex-column">
-      <h1>Selamat Datang dan Selamat Berbelanja</h1>
-      <h2>di Toko <strong>Kami</strong></h2>
+      <h1>Selamat Datang</h1>
+      <h2>di Apotek <strong>Saranjana</strong></h2>
     </div>
   </section>
 
