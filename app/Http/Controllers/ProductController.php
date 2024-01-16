@@ -18,10 +18,10 @@ class ProductController extends Controller
      */
     public function index(): View
     {
-        $products = Product::latest()->paginate(5);
+        $perPage = request()->get('per_page', 15);
+        $products = Product::latest()->paginate($perPage);
         return view('products.index', compact('products'))
-        ->with('i', (request()->input('page', 1)-1)* 5);
-
+            ->with('i', (request()->input('page', 1) - 1) * $perPage);
     }
 
     /**
@@ -45,18 +45,18 @@ class ProductController extends Controller
 
         $input = $request->all();
 
-        if($image = $request->file('image')){
+        if ($image = $request->file('image')) {
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
-        }else{
+        } else {
             unset($input['image']);
         }
 
         Product::create($input);
         return redirect()->route('products.index')
-        ->with('success', 'Product Created Successfully.');
+            ->with('success', 'Product Created Successfully.');
     }
 
     /**
@@ -64,7 +64,7 @@ class ProductController extends Controller
      */
     public function show(Product $product): View
     {
-        return view('products.show',compact('product'));
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product): View
     {
-        return view('products.edit',compact('product'));
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -87,17 +87,17 @@ class ProductController extends Controller
 
         $input = $request->all();
 
-        if($image = $request->file('image')){
+        if ($image = $request->file('image')) {
             $destinationPath = 'images/';
-            $profileImage = date('YmdHis'). "." . $image->getClientOriginalExtension();
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
-        }else{
+        } else {
             unset($input['image']);
         }
 
         $product->update($input);
-        return Redirect()->route('products.index')->with('success','Product Update Successfully');
+        return Redirect()->route('products.index')->with('success', 'Product Update Successfully');
     }
 
     /**
@@ -108,7 +108,6 @@ class ProductController extends Controller
 
         $product->delete();
         return redirect()->route('products.index')
-        ->with('Success','Product Deleted Successfully');
+            ->with('Success', 'Product Deleted Successfully');
     }
 }
-

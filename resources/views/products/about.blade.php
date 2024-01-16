@@ -1,5 +1,5 @@
 @extends('layout.navbar')
-@section('navbar')
+@section('content')
 <style>
 *{
     margin: 0;
@@ -117,7 +117,7 @@
     </head>
     <body>
       <div class="section">
-        <div class="container">
+        <div class="container d-flex">
           <div class="content-section">
             <div class="title">
               <h1>Tentang kami</h1>
@@ -133,6 +133,9 @@
                 <a href="#">Read More</a>
               </div>
             </div>
+          </div>
+          <div class="kanan">
+            <img src="{{ URL::asset('images/more.png') }}" width="400px">
           </div>
         </div>
       </div>

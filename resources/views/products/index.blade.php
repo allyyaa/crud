@@ -1,6 +1,6 @@
 @extends('layout.navbar')
 
-@section('navbar')
+@section('content')
     <style>
         * {
             padding: 0;

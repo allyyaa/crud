@@ -1,6 +1,6 @@
 @extends('layout.navbar')
 
-@section('navbar')
+@section('content')
 <style>
     body{
         background-color: #f9f6f2;
@@ -22,6 +22,9 @@
 
     h2{
         font-size: 1.3em;
+    }
+    .hero-section{
+        margin-top: -140px
     }
 </style>
   <section class="hero-section" >

@@ -13,6 +13,7 @@ body{
     font-family: 'poppins', sans-serif;
     font-size: 20px;
     color: #2d2d2d;
+    overflow-x: hidden;
 }
 .navbar{
   background-color: #0e345f;
@@ -35,6 +36,7 @@ body{
   border-radius: 50px;
   text-decoration: none;
   transition: 0.3s background-color;
+  margin-left: 10px
 }
 
 .login-button:hover{
@@ -79,36 +81,74 @@ body{
     width: 100%;
     visibility: visible;
   }
+  .footer{
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 10px;
+    text-align: center;
+    position: bottom;
+    bottom: 0;
+    width: 100%;
+  }
+  .isi{
+    padding:20px 60px;
+    /* margin-top: 80px */
+  }
+
+  .navbar{
+    position: sticky;
+    z-index: 99;
+  }
+  .kanan{
+    float: right;
+  }
 }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Apotek Saranjana</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/products">Produk</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about">Informasi</a>
-              </li>
-          </div>
-          <a href="{{route('logout')}}" class="login-button">Log out</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-        </div>
-      </nav>
-
-    @yield('navbar')
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Apotek Saranjana</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              @if (Route::currentRouteName() != 'welcome')
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/products">Produk</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">Informasi</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="kotakLoginDaftar">
+                <a href="{{route('logout')}}" class="login-button">Logout</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              </div>
+              @else
+              <div class="kotakLoginDaftar">
+                <a href="{{route('logout')}}" class="login-button">Login</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              </div>
+              @endif
+            </div>
+          </nav>
+    </header>
+    <div class="isi">
+        @yield('content')
+    </div>
+    <footer class="footer">
+        <p>© Copyright 2023.</p>
+    </footer>
 </body>
 </html>

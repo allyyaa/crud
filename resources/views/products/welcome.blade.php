@@ -1,9 +1,6 @@
-@extends('products.layout')
+@extends('layout.navbar')
 @section('content')
 <style>
-/* Add this CSS to your existing stylesheet or create a new one */
-
-/* Styling for the Google login button */
 .btn-google {
   background-color: #dd4b39;
   color: #ffffff;
@@ -18,29 +15,24 @@
 }
 
 .btn-google:hover {
-  background-color: #c53727; /* Darken the background color on hover */
+  background-color: #c53727;
 }
 
 .btn-google i {
   margin-right: 10px;
 }
 
-/* Styling for the form labels */
 .form-label {
   color: #495057;
 }
 
-/* Styling for the form input fields */
 .form-control {
   border-radius: 0.5rem;
 }
 
-/* Styling for the Remember Password checkbox */
 .form-check-label {
   color: #495057;
 }
-
-/* Styling for the Login button */
 .btn-primary {
   background-color: #508bfc;
   border: none;
@@ -49,12 +41,19 @@
 }
 
 .btn-primary:hover {
-  background-color: #406bd2; /* Darken the background color on hover */
+  background-color: #406bd2;
+}
+.jarak-atas{
+    margin-top: -50px
+}
+
+.form-check-input{
+    margin-right: 5px;
 }
 
 </style>
 <section>
-  <div class="container py-5 h-100">
+  <div class="container mt-5 py-5 h-100 jarak-atas">
     <div class="container d-flex align-items-center justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card shadow-2-strong" style="border-radius: 1rem;">

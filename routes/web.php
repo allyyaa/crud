@@ -21,8 +21,8 @@ Route::get('/google/redirect', [SocialiteController::class, 'redirect'])->name('
 Route::get('/google/callback', [SocialiteController::class, 'callback']);
 Route::get('/tambah', [ProductController::class, 'create']);
 Route::get('/home', [ProductController::class, 'index'])->name('home');
-Route::get('/', [LoginController::class, 'login'])->name('login');
-Route::('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+// Route::get('/', [LoginController::class, 'login'])->name('login');
+// Route::('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 // Route::get('home',[])
 Route::get('/logout', [SocialiteController::class, 'logout'])->name('logout');
 
@@ -36,7 +36,7 @@ Route::get('/about', function () {
 
 Route::get('/', function () {
     return view('products.welcome');
-});
+})->name('welcome');
 Route::get('/edit', function () {
     return view('products.edit');
 });
@@ -45,5 +45,3 @@ Route::get('/delete', function () {
 });
 
 // Route::get('/prodak',[ProductController::class,'index']);
-
-
